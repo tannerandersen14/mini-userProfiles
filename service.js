@@ -1,7 +1,10 @@
-myApp.service('mySvc', function() {
+myApp.service('mySvc', function($http) {
 
   this.getUsers = function() {
-    return data;
+    return $http({
+      method: 'GET',
+      url: 'http://reqres.in/api/users?page=1'
+    });
   }
 
 
